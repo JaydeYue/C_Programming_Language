@@ -2,8 +2,8 @@
 *
 
 # except c and header files
-!**/*.c
-!**/*.h
+!*/*.c
+!*/*.h
 
 # except specific files
 !README.md
