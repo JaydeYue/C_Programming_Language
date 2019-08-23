@@ -8,3 +8,4 @@
 # except specific files
 !README.md
 !LICENSE
+!.gitignore
