@@ -4,7 +4,6 @@
 */
 #include <stdio.h>
 
-
 void hello_world() {
     printf("%s%c%s%c", "Hello", ' ', "World", '\n');
 }
