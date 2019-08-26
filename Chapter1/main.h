@@ -33,3 +33,7 @@ void one_word_per_line();
 
 //  Exercise 1-13
 void word_length_histogram(int direction);
+int count_digit(int input);
+
+//  Exercise 1-14
+void char_freq_histogram(int direction);
