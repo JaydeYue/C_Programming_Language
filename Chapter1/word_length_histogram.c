@@ -48,9 +48,9 @@ void word_length_histogram(int direction) {
                 printf(" ");
             printf("|");
             printf(" ");
-            for (j=0; j<word_length[i]; j++)
+            for (j=1; j<=floor(word_length[i]/step); j++)
                 printf("-");
-            if (word_length[i] != 0) {
+            if (word_length[i] >= step) {
                 printf(" ");
             }
             printf("%d\n", word_length[i]);

@@ -58,9 +58,9 @@ void char_freq_histogram(int direction) {
             }
             printf("|");
             printf(" ");
-            for (j=0; j<char_freq[i]; j++)
+            for (j=1; j<=num_bar[i]; j++)
                 printf("-");
-            if (char_freq[i] != 0) {
+            if (char_freq[i] >= step) {
                 printf(" ");
             }
             printf("%d\n", char_freq[i]);
