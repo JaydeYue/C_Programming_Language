@@ -38,7 +38,7 @@ void word_length_histogram(int direction) {
     }
 
     int j;
-    max = floor(max/step);
+    max = max/step;
     printf("Histogram of Word Lengths with Each Bar Representing %d Words\n", step);
     printf("-------------------------------------------------------------\n");
     if (direction == HORIZONTAL) {
@@ -48,7 +48,7 @@ void word_length_histogram(int direction) {
                 printf(" ");
             printf("|");
             printf(" ");
-            for (j=1; j<=floor(word_length[i]/step); j++)
+            for (j=1; j<=word_length[i]/step; j++)
                 printf("-");
             if (word_length[i] >= step) {
                 printf(" ");
@@ -69,7 +69,7 @@ void word_length_histogram(int direction) {
                         printf(" ");
                         position++;
                     }
-                    num_bar = floor(word_length[j]/step);
+                    num_bar = word_length[j]/step;
                     if (num_bar > i) {
                         if (position == j*3) {
                             printf(" ");
@@ -96,7 +96,7 @@ void word_length_histogram(int direction) {
 int count_digit(int input) {
     int count = 0;
     while (input > 0) {
-        input = floor(input/10);
+        input = input/10;
         count++;
     }
     return count;

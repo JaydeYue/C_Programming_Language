@@ -38,10 +38,10 @@ void char_freq_histogram(int direction) {
     }
 
     int j;
-    max = floor(max/step);
+    max = max/step;
     int num_bar[29];
     for (i = 0; i < 29; i++)
-        num_bar[i] = floor(char_freq[i]/step);
+        num_bar[i] = char_freq[i]/step;
     printf("Histogram of Frequencies of Characters with Each Bar Representing %d Characters\n", step);
     printf("The chracters are grouped into 26 letters (upper and lower cases are not distinguished), digits (D), separating characters (S: tab newline space), and other characters (O) \n");
     printf("-------------------------------------------------------------------------------\n");
