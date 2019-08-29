@@ -1,8 +1,19 @@
+//  Used as boolean
+#define TRUE 1
+#define FALSE 0
+
 #define HORIZONTAL 0                        //  1-13, 1-14
 #define VERTICAL 1                          //  1-13, 1-14
-#define MAXLINE 1000                        //  1-16, 1-17, 1-19
+#define MAXLINE 1000                        //  1-16, 1-17, 1-19, 2-24
 #define TABLENGTH 4                         //  1-20, 1-21
-#define COLUMN_TO_WRAP 5                  //  1-22
+#define COLUMN_TO_WRAP 80                   //  1-22
+#define OTHER_CHAR 0                        //  1-24
+#define ESCAPE 1                            //  1-24
+#define SLASH 2                             //  1-24
+#define STAR 3                              //  1-24
+#define PARENTHESE 1                        //  1-24
+#define BRACKET 2                           //  1-24
+#define BRACE 3                             //  1-24
 
 //  Exercise 1-1
 void hello_world();
@@ -71,3 +82,9 @@ void entab(int tablength);
 //  Exercise 1-22
 void fold(int column_to_wrap);
 void putline(char line[], int limit);
+
+//  Exercise 1-23
+void rm_c_comments();
+
+//  Exercise 1-24
+void syntax_checker();

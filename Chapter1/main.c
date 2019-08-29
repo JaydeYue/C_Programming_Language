@@ -128,11 +128,25 @@ int main() {
     ungetc('\0', stdin);        //  Recover stdin from EOF
     printf("-------------------- End of Exercise 1-21 --------------------\n\n");
 
-    // printf("----------------------- Exercise 1-22 ------------------------\n");
-    // printf("This program will fold long input lines at column %d\n", COLUMN_TO_WRAP);
-    // printf("You need to enter EOF to exit the input stream\n");
-    // fold(COLUMN_TO_WRAP);
-    // ungetc('\0', stdin);        //  Recover stdin from EOF
-    // printf("-------------------- End of Exercise 1-22 --------------------\n\n");
+    printf("----------------------- Exercise 1-22 ------------------------\n");
+    printf("This program will fold long input lines at column %d\n", COLUMN_TO_WRAP);
+    printf("You need to enter EOF to exit the input stream\n");
+    fold(COLUMN_TO_WRAP);
+    ungetc('\0', stdin);        //  Recover stdin from EOF
+    printf("-------------------- End of Exercise 1-22 --------------------\n\n");
+
+    printf("----------------------- Exercise 1-23 ------------------------\n");
+    printf("This program will remove all comments of the inputted c program\n");
+    printf("You need to enter EOF to exit the input stream\n");
+    rm_c_comments();
+    ungetc('\0', stdin);        //  Recover stdin from EOF
+    printf("-------------------- End of Exercise 1-23 --------------------\n\n");
+
+    printf("----------------------- Exercise 1-24 ------------------------\n");
+    printf("This program will check for basic syntax of one inputted c program\n");
+    printf("You need to enter EOF to exit the input stream, you will see more potential error messages upon exit\n");
+    syntax_checker();
+    ungetc('\0', stdin);        //  Recover stdin from EOF
+    printf("-------------------- End of Exercise 1-24 --------------------\n\n");
     return 0;
 }

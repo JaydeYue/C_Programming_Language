@@ -6,13 +6,16 @@
 
 void fold(int column_to_wrap) {
     int len, i, j, adjusted_wrap = column_to_wrap;
-    char line[column_to_wrap+1];
-    len = book_getline(line, column_to_wrap+1);
+    char line[column_to_wrap+2];
+    len = book_getline(line, column_to_wrap+2);
     while (len > 0) {
-        if (len < adjusted_wrap || line[adjusted_wrap-1] == '\n') {
+        if (len <= adjusted_wrap) {
             putline(line, adjusted_wrap);
-            len = book_getline(line, column_to_wrap+1);
-            printf("AA");
+            adjusted_wrap = column_to_wrap;
+        } else if (line[adjusted_wrap] == '\n' || line[adjusted_wrap] == '\t' || line[adjusted_wrap] == ' ') {
+            putline(line, adjusted_wrap);
+            putchar('\n');
+            adjusted_wrap = column_to_wrap;
         } else {
             for (i = len-1; i>=0 && line[i] != ' ' && line[i] != '\t'; i--);
             if (i < 0) {
@@ -21,19 +24,17 @@ void fold(int column_to_wrap) {
                 putchar('\n');
                 putchar('-');
                 putchar(line[adjusted_wrap-1]);
-                adjusted_wrap = column_to_wrap-2;
-                len = book_getline(line, adjusted_wrap+1);
-                printf("BB");
+                putchar(line[adjusted_wrap]);
+                adjusted_wrap = column_to_wrap-3;
             } else {
                 putline(line, i);
                 putchar('\n');
                 for (j = i+1; j < len; j++)
                     putchar(line[j]);
-                adjusted_wrap = i+1;
-                len = book_getline(line, adjusted_wrap+1);
-                printf("CC");
+                adjusted_wrap = column_to_wrap-(len-i-1);
             }
         }
+        len = book_getline(line, adjusted_wrap+2);
     }
 }
 

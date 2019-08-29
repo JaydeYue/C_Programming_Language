@@ -12,15 +12,15 @@ void word_length_histogram(int direction) {
     int word_length[50] = {0};
     while ((temp = getchar()) != EOF) {
         switch (temp) {
-            case '\t': case ' ': case '\n':
-                if (count_word != 0 && count_word <= 50) {
-                    word_length[count_word-1]++;
-                }
-                count_word = 0;
-                break;
-            default:
-                count_word++;
-                break;
+        case '\t': case ' ': case '\n':
+            if (count_word != 0 && count_word <= 50) {
+                word_length[count_word-1]++;
+            }
+            count_word = 0;
+            break;
+        default:
+            count_word++;
+            break;
         }
     }
 

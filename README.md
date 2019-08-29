@@ -21,5 +21,5 @@ Some exercises have helper functions which are included in their c file and decl
 
 ## Progress
 
-Finished and tested up to chapter1 exercise 15\\
+Finished and tested up all chapter1 exercises, the tests are not thorough though, please report any bugs you have found!\\
 Planning on finishing all exercises in this book by Sept 13th

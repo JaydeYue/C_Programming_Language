@@ -10,31 +10,31 @@ void special_char_replace() {
     int temp, count_blank = 0;
     while ((temp = getchar()) != EOF) {
         switch (temp) {
-            case '\b':
-                putchar('\\');
-                putchar('b');
-                count_blank = 0;
-                break;
-            case '\t':
-                putchar('\\');
-                putchar('t');
-                count_blank = 0;
-                break;
-            case '\\':
-                putchar('\\');
-                putchar('\\');
-                count_blank = 0;
-                break;
-            case ' ':
-                if (count_blank == 0) {
-                    putchar(' ');
-                }
-                count_blank++;
-                break;
-            default:
-                putchar(temp);
-                count_blank = 0;
-                break;
+        case '\b':
+            putchar('\\');
+            putchar('b');
+            count_blank = 0;
+            break;
+        case '\t':
+            putchar('\\');
+            putchar('t');
+            count_blank = 0;
+            break;
+        case '\\':
+            putchar('\\');
+            putchar('\\');
+            count_blank = 0;
+            break;
+        case ' ':
+            if (count_blank == 0) {
+                putchar(' ');
+            }
+            count_blank++;
+            break;
+        default:
+            putchar(temp);
+            count_blank = 0;
+            break;
         }
     }
 }

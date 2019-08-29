@@ -8,13 +8,13 @@ void detab(int tablength) {
     int temp, i;
     while ((temp = getchar()) != EOF) {
         switch (temp) {
-            case '\t':
-                for (i = 0; i < tablength; i++)
-                    putchar(' ');
-                break;
-            default:
-                putchar(temp);
-                break;
+        case '\t':
+            for (i = 0; i < tablength; i++)
+                putchar(' ');
+            break;
+        default:
+            putchar(temp);
+            break;
         }
     }
 }
