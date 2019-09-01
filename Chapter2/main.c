@@ -1,74 +1,55 @@
 /* Exercises from Chapter 2 of K&R2 i.e. The C Programming Language 2nd Edition book */
 #include <stdio.h>
-#include <limits.h>
-#include <float.h>
-#include "exercises.h"
+#include "main.h"
 
 int main() {
-    // Exercise 2-1
-    determine_range_of_types();
+    char EOF_statement[] = "You need to enter EOF to exit the input stream\n";
+    char line[MAXLINE];
+    char s1[MAXLINE];
+    char s2[MAXLINE];
+    int line_len;
 
-    // Exercise 2-3
-    htoi(HEX_STRING);
-    return 0;
-}
+    // printf("------------------------ Exercise 2-1 ------------------------\n");
+    // determine_range();
+    // printf("--------------------- End of Exercise 2-1 --------------------\n\n");
 
-/*  Exercise 2-1
-    Write a program to determine the ranges of char, short, int, and long variables, both signed and unsigned, by
-    printing appropriate values from standard headers and by direct computation. Harder if you compute them: determine
-    the ranges of the various floating-point types.
-*/
-void determine_range_of_types() {
-    printf("------------------ Exercises 2-1 ------------------\n");
+    printf("------------------------ Exercise 2-2 ------------------------\n");
+    printf("This program implements book_getline in chapter1 without using and/or operators\n%s", EOF_statement);
+    for_loop_equivalent();
+    // if (getchar() == EOF)
+        ungetc('\0', stdin);
+    printf("--------------------- End of Exercise 2-2 --------------------\n\n");
 
-    printf("Ranges from standard headers limits.h and float.h:\n");
-    // From limits.h
-    printf("Number of bits in a byte: %d\n", CHAR_BIT);
-    printf("Range of signed char: %d to %d\n", SCHAR_MIN, SCHAR_MAX);
-    printf("Range of signed short: %d to %d\n", SHRT_MIN, SHRT_MAX);
-    printf("Range of signed int: %d to %d\n", INT_MIN, INT_MAX);
-    printf("Range of signed long: %ld to %ld\n", LONG_MIN, LONG_MAX);
-    printf("Range of unsigned char: 0 to %u\n", UCHAR_MAX);
-    printf("Range of unsigned short: 0 to %u\n", USHRT_MAX);
-    printf("Range of unsigned int: 0 to %u\n", UINT_MAX);
-    printf("Range of unsigned long: 0 to %lu\n", ULONG_MAX);
-    // From float.h
-    printf("Range of float: %e to %e\n", FLT_MIN, FLT_MAX);
-    printf("Range of double: %e to %e\n", DBL_MIN, DBL_MAX);
-    printf("Range of long double: %Le to %Le\n\n", LDBL_MIN, LDBL_MAX);
+    printf("------------------------ Exercise 2-3 ------------------------\n");
+    printf("This program converts your inputted integer hex number (started with or without 0x/0X) into its equivalent integer value. The allowable digits are 0 through 9, a through f, and A through F.\n%s", EOF_statement);
+    htoi();
+    // if (getchar() == EOF)
+        ungetc('\0', stdin);
+    printf("--------------------- End of Exercise 2-3 --------------------\n\n");
 
-    unsigned char c = ~0;
-    unsigned short s = ~0;
-    unsigned int i = ~0;
-    unsigned long l = ~0;
-    float f = 1;
-    double d = 1;
-    long double ld,temp = 0;
+    printf("------------------------ Exercise 2-4 ------------------------\n");
+    printf("This program will delete each character in s1 that matches any character in s2\n%s", EOF_statement);
+    while ((line_len = get_from_input(" \t\n", line, MAXLINE)) == 0);
+    book_copy(s1, line);
+    while ((line_len = get_from_input(" \t\n", line, MAXLINE)) == 0);
+    book_copy(s2, line);
+    squeeze(s1, s2);
+    // if (getchar() == EOF)
+        ungetc('\0', stdin);
+    printf("s1 after deletions: %s\n", s1);
+    printf("--------------------- End of Exercise 2-4 --------------------\n\n");
 
-    printf("Ranges from computation:\n");
-    // Right shift to leave out the sign bit
-    printf("Range of signed char: %d to %d\n", -(c >> 1) - 1, c >> 1);
-    printf("Range of signed short: %d to %d\n", -(s >> 1) - 1, s >> 1);
-    printf("Range of signed int: %d to %d\n", -(i >> 1) - 1, i >> 1);
-    printf("Range of signed long: %ld to %ld\n", -(l >> 1) - 1, l >> 1);
-    // They are maximum already since they have all their bits reversed from all 0s
-    printf("Range of unsigned char: 0 to %u\n", c);
-    printf("Range of unsigned short: 0 to %u\n", s);
-    printf("Range of unsigned int: 0 to %u\n", i);
-    printf("Range of unsigned long: 0 to %lu\n", l);
-    // while (f < f*2) {
-    //
-    // }
-    printf("Range of float: %f to %f\n", FLT_MIN, FLT_MAX);
-    printf("Range of double: %lf to %lf\n", DBL_MIN, DBL_MAX);
-    printf("Range of long double: %Lf to %Lf\n", LDBL_MIN, LDBL_MAX);
+    printf("------------------------ Exercise 2-5 ------------------------\n");
+    printf("This program returns the first location (starting 0) in s1 where any char from s2 occurs, or −1 if there is none\n%s", EOF_statement);
+    while ((line_len = get_from_input(" \t\n", line, MAXLINE)) == 0);
+    book_copy(s1, line);
+    while ((line_len = get_from_input(" \t\n", line, MAXLINE)) == 0);
+    book_copy(s2, line);
+    printf("Location: %d\n", any(s1, s2));
+    // if (getchar() == EOF)
+        ungetc('\0', stdin);
+    printf("--------------------- End of Exercise 2-5 --------------------\n\n");
 
-    printf("------------------ End of Exercise 2-1 ------------------\n\n");
-}
-
-/*  Exercise 2-3
-    Write the function htoi(s), which converts a string of hexadecimal digits (including an optional 0x or 0X) into its equivalent integer value. The allowable digits are 0 through 9, a through f, and A through F.
-*/
-int htoi(char hex_string[]){
+    //  FIXME: this getchar EOF issue causes exercises misbehaving
     return 0;
 }
