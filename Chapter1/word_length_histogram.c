@@ -18,6 +18,8 @@ void word_length_histogram(int direction) {
             }
             count_word = 0;
             break;
+        case '\0':
+            break;
         default:
             count_word++;
             break;

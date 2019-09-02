@@ -37,6 +37,11 @@ int get_from_input(char separators[], char line[], int lim) {
             break;
         line[i] = c;
     }
-    line[i] = '\0';
-    return i;
+    if (c == EOF) {
+        line[i] = '\0';
+        return -1;
+    } else {
+        line[i] = '\0';
+        return i;
+    }
 }
