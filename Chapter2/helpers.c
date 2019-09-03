@@ -22,6 +22,11 @@ void book_copy(char to[], char from[]) {
         ++i;
 }
 
+/*  From book - getbits:  get n bits from position p */
+unsigned book_getbits(unsigned x, int p, int n) {
+    return (x >> (p+1-n)) & ~(~0 << n);
+}
+
 //  Store the input read up to one of the separators into line, lim is max size of line, return the length
 int get_from_input(char separators[], char line[], int lim) {
     int c, j, i;
@@ -43,5 +48,35 @@ int get_from_input(char separators[], char line[], int lim) {
     } else {
         line[i] = '\0';
         return i;
+    }
+}
+
+//  read a positive decimal from a line
+int read_decimal_from_line(char line[]) {
+    int i = 0, decimal =0;
+    while(line[i] != '\0' && line[i] != '\n') {
+        if (line[i] <= '9' && line[i] >= '0') {
+            decimal = decimal * 10 + line[i] - '0';
+            i++;
+        } else {
+            return -1;
+        }
+    }
+    return decimal;
+}
+
+//  print an unsigned number in binary
+void print_in_binary(unsigned number) {
+    int length = 1;
+    unsigned test_length = number, mask;
+    while ((test_length /= 2) != 0)
+        length++;
+    while ((length -= 1) >= 0) {
+        mask = 1 << length;
+        if (number & mask) {
+            putchar('1');
+        } else {
+            putchar('0');
+        }
     }
 }

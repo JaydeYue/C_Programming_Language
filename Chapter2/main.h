@@ -12,8 +12,11 @@ void recover_stdin(int exercise);
 /*  From helpers.c*/
 //  Store the input read up to one of the separators into line, lim is max size of line, return the length
 int get_from_input(char separators[], char line[], int lim);
+int read_decimal_from_line(char line[]);
 int book_getline(char s[], int lim);
 void book_copy(char to[], char from[]);
+unsigned book_getbits(unsigned x, int p, int n);
+void print_in_binary(unsigned number);
 
 // Exercise 2-1
 void determine_range();
@@ -32,4 +35,7 @@ void squeeze(char s1[], char s2[]);
 int any(char s1[], char s2[]);
 
 //  Exercise 2-6
-int setbits(int x, int p, int n, int y);
+int setbits(unsigned x, int p, int n, unsigned y);
+
+//  Exercise 2-7
+int invert(unsigned, int p, int n);
