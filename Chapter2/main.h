@@ -5,6 +5,10 @@
 //  Used as maxline of a string array
 #define MAXLINE 1000
 
+/*  From main.c*/
+//  Recover stdin from EOF while avoiding puting a \0 at the front of the line
+void recover_stdin(int exercise);
+
 /*  From helpers.c*/
 //  Store the input read up to one of the separators into line, lim is max size of line, return the length
 int get_from_input(char separators[], char line[], int lim);
@@ -26,3 +30,6 @@ void squeeze(char s1[], char s2[]);
 
 //  Exercise 2-5
 int any(char s1[], char s2[]);
+
+//  Exercise 2-6
+int setbits(int x, int p, int n, int y);

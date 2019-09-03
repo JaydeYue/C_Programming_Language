@@ -15,6 +15,10 @@
 #define BRACKET 2                           //  1-24
 #define BRACE 3                             //  1-24
 
+/*  From main.c*/
+//  Recover stdin from EOF while avoiding puting a \0 at the front of the line
+void recover_stdin(int exercise);
+
 //  Exercise 1-1
 void hello_world();
 

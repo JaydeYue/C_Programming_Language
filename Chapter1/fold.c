@@ -41,6 +41,6 @@ void fold(int column_to_wrap) {
 //  Putchar of line up to limit
 void putline(char line[], int limit) {
     int i;
-    for (i = 0; i < limit; i++)
+    for (i = 0; i < limit && line[i] != '\0'; i++)
         putchar(line[i]);
 }
