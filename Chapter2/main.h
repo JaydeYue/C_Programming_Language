@@ -39,3 +39,12 @@ int setbits(unsigned x, int p, int n, unsigned y);
 
 //  Exercise 2-7
 int invert(unsigned, int p, int n);
+
+//  Exercise 2-8
+unsigned rightrot(unsigned int x, int n);
+
+//  Exercise 2-9
+int bitcount(unsigned x);
+
+//  Exercise 2-10
+int lower(int c);

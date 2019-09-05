@@ -21,6 +21,8 @@ Some exercises have helper functions which are included in their c file and decl
 
 ## Progress
 
-Finished and tested up all chapter1 exercises, the tests are not thorough though, please report any bugs you have found!\\
-Currently going through chapter2 exercises\\
+Finished and tested all chapter1 exercises\\
+Finished and tested all chapter2 exercises (though more to be done with floating range calculation for 2-1 later)\\
+Will start chapter 3 soon!\\
+I didn't test thoroughly, please report any bugs you may have found!\\
 Planning on finishing all exercises in this book by Nov 1st

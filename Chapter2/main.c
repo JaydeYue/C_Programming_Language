@@ -8,7 +8,7 @@ int main() {
     char s1[MAXLINE];
     char s2[MAXLINE];
     int line_len;
-    int x, y, n, p;
+    int i, x, y, n, p;
 
     printf("------------------------ Exercise 2-1 ------------------------\n");
     determine_range();
@@ -56,7 +56,7 @@ int main() {
     printf("--------------------- End of Exercise 2-5 --------------------\n\n");
 
     printf("------------------------ Exercise 2-6 ------------------------\n");
-    printf("This program take in positive decimal numbers x, y, n, and p. It will return x with the n bits that begin at position p (count from right to right) set to the rightmost n bits of y, leaving the other bits unchanged\n");
+    printf("This program take in positive integer numbers x, y, n, and p. It will return x with the n bits that begin at position p (count from right to right) set to the rightmost n bits of y, leaving the other bits unchanged\n");
     printf("Input x: \n");
     while ((line_len = get_from_input(" \t\n", line, MAXLINE)) == 0 && line_len != -1);
     while ((x = read_decimal_from_line(line)) < 0) {
@@ -101,7 +101,7 @@ int main() {
     printf("--------------------- End of Exercise 2-6 --------------------\n\n");
 
     printf("------------------------ Exercise 2-7 ------------------------\n");
-    printf("This program take in positive decimal numbers x, n and p. It will return x with the n bits that begin at position p (count from right to right) inverted\n");
+    printf("This program take in positive integer numbers x, n and p. It will return x with the n bits that begin at position p (count from right to right) inverted\n");
     printf("Input x: \n");
     while ((line_len = get_from_input(" \t\n", line, MAXLINE)) == 0 && line_len != -1);
     while ((x = read_decimal_from_line(line)) < 0) {
@@ -135,6 +135,64 @@ int main() {
         printf("\n");
     }
     printf("--------------------- End of Exercise 2-7 --------------------\n\n");
+
+    printf("------------------------ Exercise 2-8 ------------------------\n");
+    printf("This program take in positive integer numbers x, and n. It will return x with n bits right rotated\n");
+    printf("Input x: \n");
+    while ((line_len = get_from_input(" \t\n", line, MAXLINE)) == 0 && line_len != -1);
+    while ((x = read_decimal_from_line(line)) < 0) {
+        printf("Must be a positive decimal, please try again\n");
+        while ((line_len = get_from_input(" \t\n", line, MAXLINE)) == 0 && line_len != -1);
+    }
+    printf("x in binary: ");
+    print_in_binary(x);
+    printf("\n");
+    printf("Input n: \n");
+    while ((line_len = get_from_input(" \t\n", line, MAXLINE)) == 0 && line_len != -1);
+    while ((n = read_decimal_from_line(line)) < 0) {
+        printf("Must be a positive decimal, please try again\n");
+        while ((line_len = get_from_input(" \t\n", line, MAXLINE)) == 0 && line_len != -1);
+    }
+    if (line_len == -1) {
+        printf("You have exited prematurely with EOF\n");
+        recover_stdin(7);
+    } else {
+        x = rightrot(x, n);
+        printf("New x after rotation: %u\n", x);
+        printf("New x in binary: ");
+        print_in_binary(x);
+        printf("\n");
+    }
+    printf("--------------------- End of Exercise 2-8 --------------------\n\n");
+
+    printf("------------------------ Exercise 2-9 ------------------------\n");
+    printf("This program take in positive integer numbers x and count the number of 1 bits in it\n");
+    printf("Input x: \n");
+    while ((line_len = get_from_input(" \t\n", line, MAXLINE)) == 0 && line_len != -1);
+    while ((x = read_decimal_from_line(line)) < 0) {
+        printf("Must be a positive decimal, please try again\n");
+        while ((line_len = get_from_input(" \t\n", line, MAXLINE)) == 0 && line_len != -1);
+    }
+    printf("x in binary: ");
+    print_in_binary(x);
+    printf("\n");
+    if (line_len == -1) {
+        printf("You have exited prematurely with EOF\n");
+        recover_stdin(7);
+    } else {
+        printf("# of 1 bits in x: %u\n", bitcount(x));
+        printf("\n");
+    }
+    printf("--------------------- End of Exercise 2-9 --------------------\n\n");
+
+    printf("----------------------- Exercise 2-10 ------------------------\n");
+    printf("This program converts the input to its lower case\n");
+    printf("Input: ");
+    while ((line_len = book_getline(line, MAXLINE)) <= 1);
+    for (i = 0; line[i] != '\0'; i++)
+        putchar(lower(line[i]));
+    printf("-------------------- End of Exercise 2-10 --------------------\n\n");
+
     return 0;
 }
 
