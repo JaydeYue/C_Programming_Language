@@ -3,8 +3,7 @@ My solutions to exercises in C Programming Language 2nd Edition, i.e. K&amp;R2
 
 ## How to run
 
-In each chapter, there is a makefile that should compile all exercises in that chapter into an executable chapter(number).o
-
+In each chapter, there is a makefile that should compile all exercises in that chapter into an executable chapter(number).o\
 If you want to run only a subset of exercises or change some mutable parameters of some exercises, you can make those changes in main.c
 
 Here is an example for chapter1
