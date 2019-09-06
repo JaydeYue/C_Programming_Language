@@ -24,6 +24,6 @@ $ ./chapter1.o
 
 * Finished and tested all chapter1 exercises
 * Finished and tested all chapter2 exercises (though more to be done with floating range calculation for 2-1 later)
-* Will start chapter 3 soon!
+* Working on Chapter3!
 * I didn't test thoroughly, please report any bugs you may have found!
 * Planning on finishing all exercises in this book by Nov 1st
