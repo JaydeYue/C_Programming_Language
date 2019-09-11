@@ -26,5 +26,17 @@ int main() {
     }
     printf("--------------------- End of Exercise 3-2 --------------------\n\n");
 
+    printf("------------------------ Exercise 3-3 ------------------------\n");
+    printf("This program expands shorthand notations like a-z, 0-9, Z-A in your input into the equivalent complete list abc...xyz\n%s", EOF_statement);
+    printf("Your input: ");
+    while ((line_len = get_from_input("", line, MAXLINE)) == 0 && line_len != -1);
+    putchar('\n');
+    expand(line, s1);
+    printf("After expansion: %s\n", s1);
+    if (line_len == -1) {
+        recover_stdin(3);
+    }
+    printf("--------------------- End of Exercise 3-3 --------------------\n\n");
+
     return 0;
 }

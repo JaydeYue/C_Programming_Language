@@ -18,3 +18,6 @@ int my_binsearch(int x, int v[], int n);
 //  Exercise 3-2
 void escape_to_real(char from[], char to[]);
 void real_to_escape(char from[], char to[]);
+
+//  Exercise 3-3
+void expand(char from[], char to[]);
